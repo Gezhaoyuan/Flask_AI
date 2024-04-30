@@ -4,7 +4,7 @@ version:
 Author: Gezhaoyuan
 Date: 2024-04-30 20:34:34
 LastEditors: Gezhaoyuan
-LastEditTime: 2024-04-30 21:51:32
+LastEditTime: 2024-04-30 22:34:50
 '''
 from langchain.chains.combine_documents.stuff import StuffDocumentsChain
 from langchain.chains.llm import LLMChain
@@ -86,7 +86,7 @@ def get_functions():
     return jsonify(functions)
 
 # 调用具体功能接口
-# 中英互译翻接口
+# 中英互译接口
 @app.route('/api/translation', methods=['POST'])
 def translation():
     data = request.json
@@ -94,7 +94,7 @@ def translation():
     translated_text = translation(text)
     return jsonify({"translated_text": translated_text})
 
-# 总结接口
+# 文本总结接口
 @app.route('/api/summarize', methods=['POST'])
 def summarize_endpoint():
     data = request.json
